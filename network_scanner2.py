@@ -21,10 +21,8 @@ def get_arguments():
 # scan function scans the ip address given by the user to get the MAC address
 def scan(ip):
     arp_request = scapy.ARP(pdst=ip)
-    arp_request.show()
     broadcast = scapy.Ether(dst="ff:ff:ff:ff:ff:ff")
     arp_broadcast = broadcast / arp_request
-    arp_broadcast.show()
     answered_list = scapy.srp(arp_broadcast, timeout=1, verbose=False)[0]
     client_list = []
     for element in answered_list:
@@ -45,5 +43,5 @@ def print_result(results_list):
 
 
 options = get_arguments()
-scan(options)
+scan_ip = scan(options)
 print_result(scan_ip)
