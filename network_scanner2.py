@@ -25,13 +25,12 @@ def scan(ip):
     broadcast = scapy.Ether(dst="ff:ff:ff:ff:ff:ff")
     arp_broadcast = broadcast / arp_request
     arp_broadcast.show()
-    #answered_list = scapy.srp(arp_broadcast, timeout=1, verbose=False)[0]
-    #print(answered_list)
-    #client_list = []
-    #for element in answered_list:
-        #client_dict = {"ip": element[1].pdst, "mac": element[1].hwsrc}
-        #client_list.append(client_dict)
-    #return client_list
+    answered_list = scapy.srp(arp_broadcast, timeout=1, verbose=False)[0]
+    client_list = []
+    for element in answered_list:
+        client_dict = {"ip": element[1].pdst, "mac": element[1].hwsrc}
+        client_list.append(client_dict)
+    return client_list
 
 
 # prints the list of the total IPs and MACs on the network.
@@ -45,7 +44,6 @@ def print_result(results_list):
     return results_list
 
 
-# TO-DO: ADD OPTION PARSER AS WELL THE TYPE OF OS!!
 options = get_arguments()
 scan(options)
-#print_result(scan_ip)
+print_result(scan_ip)
