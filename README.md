@@ -3,11 +3,11 @@
 A simple network scanner built in python to find local IP and MAC addresses. 
 
 ## Table of contents
--   [General info]
--   [Technologies]
--   [Features]
--   [Setup]
--   [Usage]
+- [General info](https://github.com/HassanAliRizvi/Network-Scanner#general-info)
+- [Technologies](https://github.com/HassanAliRizvi/Network-Scanner#technologies)
+- [Features](https://github.com/HassanAliRizvi/Network-Scanner#features)
+- [Setup](https://github.com/HassanAliRizvi/Network-Scanner#setup)
+- [Usage](https://github.com/HassanAliRizvi/Network-Scanner#usage)
 
 ## General Info
 Even though you can use "netdiscover" command from the terminal to get the IP and MACs of the local computers, a better way is to understand how it runs and ultimately build a program like this which could detect which IPs and MACs are connected to your network. Therefore, the program was built on that motivation. 
